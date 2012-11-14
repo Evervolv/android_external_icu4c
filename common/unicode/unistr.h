@@ -4052,7 +4052,7 @@ UnicodeString::replace(int32_t start,
   int32_t count = 0;
   UBool isError = FALSE;
   U16_APPEND(buffer, count, U16_MAX_LENGTH, srcChar, isError);
-  (void)isError; // gcc 4.6 is smart enough to optimize isError out if it isn't used in the above - causing an error with -Werror
+  (void)isError;
   return doReplace(start, _length, buffer, 0, count);
 }
 
@@ -4349,7 +4349,7 @@ UnicodeString::append(UChar32 srcChar) {
   int32_t _length = 0;
   UBool isError = FALSE;
   U16_APPEND(buffer, _length, U16_MAX_LENGTH, srcChar, isError);
-  (void)isError; // gcc 4.6 is smart enough to optimize isError out if it isn't used in the above - causing an error with -Werror
+  (void)isError;
   return doReplace(length(), 0, buffer, 0, _length);
 }
 
